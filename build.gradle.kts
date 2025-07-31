@@ -1,7 +1,14 @@
 plugins {
     kotlin("multiplatform") version "1.9.20"
     id("org.jetbrains.compose") version "1.5.10"
-    id("com.android.application") version "8.5.0"  
+    id("com.android.application") version "8.5.0"
+}
+
+// 添加仓库配置
+repositories {
+    google()
+    mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 kotlin {
