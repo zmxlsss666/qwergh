@@ -1,6 +1,7 @@
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    kotlin("multiplatform") version "1.9.20"
+    id("org.jetbrains.compose") version "1.5.10"
+    id("com.android.application") version "8.5.0" apply false // 确保应用了 Android 插件
 }
 
 kotlin {
