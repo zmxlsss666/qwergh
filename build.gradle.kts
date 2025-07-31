@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform") version "1.9.20"
     id("org.jetbrains.compose") version "1.5.10"
-    id("com.android.application") version "8.5.0" apply false
+    id("com.android.application") version "8.5.0")  // 移除 apply false
 }
 
 kotlin {
@@ -31,22 +31,28 @@ kotlin {
     }
 }
 
+// 使用正确的android扩展配置
 android {
     namespace = "com.example.saltplayerremote"
     compileSdk = 34
+    
     defaultConfig {
+        applicationId = "com.example.saltplayerremote"  // 添加必要的applicationId
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    
     buildFeatures {
         compose = true
     }
+    
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.4"
     }
